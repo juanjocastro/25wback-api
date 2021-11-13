@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendData;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+
 
 
 class ApiUsuariosController extends Controller
@@ -20,8 +24,15 @@ class ApiUsuariosController extends Controller
                     'message' => $request->message
                 ]);
 
+                $details = [
+                    'title' => 'PIN - Martinez, Valentina y Storero, Franco',
+                    'body' => 'Email de prueba'
+                ];
+
+                Mail::to("proyecto25wsmpt@gmail.com")->send(new SendData($details));
+
                 //return json_encode(['status' => 'ok']);
-                return $request;
+                return 'Email ENVIADO';
             }
             
             //return $request;
