@@ -17,6 +17,8 @@ class ApiUsuariosController extends Controller
         try {
             if($request->email) {
 
+                /* validar los datos que llegan, en caso de no ser correcto, hay que mostrar el error en pantalla (react, mediante el status). se me ocurre que mediante el return de laravel, le puedo enviar una respuesta a react y de alli sumarlo a la logica empleada en el componenete coontact y fromMensaje  */
+
                 Usuarios::create([
                     'name' => $request->name,
                     'email' => $request->email,
@@ -25,8 +27,10 @@ class ApiUsuariosController extends Controller
                 ]);
 
                 $details = [
-                    'title' => 'PIN - Martinez, Valentina y Storero, Franco',
-                    'body' => 'Email de prueba'
+                    'name' => 'Name: ' . $request->name,
+                    'email' => 'Email: ' . $request->email,
+                    'phone' => 'Phone: ' .$request->phone,
+                    'messsage' => 'Message: ' . $request->message,
                 ];
 
                 Mail::to("proyecto25wsmpt@gmail.com")->send(new SendData($details));
