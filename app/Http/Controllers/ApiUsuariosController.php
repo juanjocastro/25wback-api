@@ -27,10 +27,13 @@ class ApiUsuariosController extends Controller
                 ]);
 
                 $details = [
-                    'name' => 'Name: ' . $request->name,
-                    'email' => 'Email: ' . $request->email,
-                    'phone' => 'Phone: ' .$request->phone,
-                    'messsage' => 'Message: ' . $request->message,
+                    'title' => 'Nombre: '. $request->name, 
+                    'body' => 'Email: '. $request->email,
+                    'section' => 'Mensaje: '. $request->message,
+
+
+                     
+                     
                 ];
 
                 Mail::to("proyecto25wsmpt@gmail.com")->send(new SendData($details));
