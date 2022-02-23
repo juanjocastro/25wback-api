@@ -14,6 +14,8 @@ class Usuarios extends Model
         'nombre',
         'email',
         'telefono',
-        'mensaje'       
+        'mensaje',
+        'updated_at',
+        'created_at'       
     ];
 }
