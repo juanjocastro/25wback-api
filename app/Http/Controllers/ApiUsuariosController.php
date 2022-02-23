@@ -34,7 +34,7 @@ class ApiUsuariosController extends Controller
                      
                 ];
 
-                Mail::to("proyecto25wsmpt@gmail.com")->send(new SendData($details));
+                Mail::to("mildredcastro8@gmail.com")->send(new SendData($details));
 
                 //return json_encode(['status' => 'ok']);
                 return 'Email ENVIADO';
