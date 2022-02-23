@@ -22,7 +22,7 @@ class ApiUsuariosController extends Controller
 
 		//return 'ESTOY EN SAVEUSUARIOS';
 
-                datos_formulario::create([
+                usuarios::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'phone' => $request->phone,
