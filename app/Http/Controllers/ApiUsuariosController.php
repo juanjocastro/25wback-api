@@ -23,10 +23,10 @@ class ApiUsuariosController extends Controller
 		//return 'ESTOY EN SAVEUSUARIOS';
 
                 usuarios::create([
-                    'name' => $request->name,
+                    'nombre' => $request->name,
                     'email' => $request->email,
-                    'phone' => $request->phone,
-                    'message' => $request->message
+                    'telefono' => $request->phone,
+                    'mensaje' => $request->message
                 ]);
 
                 $details = [
