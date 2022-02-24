@@ -11,7 +11,7 @@ class SendData extends Mailable
 {
     use Queueable, SerializesModels;
     public $details;
-    /**
+    /*
      * Create a new message instance.
      *
      * @return void
